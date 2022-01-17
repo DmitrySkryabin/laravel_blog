@@ -23,13 +23,13 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     });
 
     Route::group(['namespace' => 'Post', 'prefix' => 'posts'], function () {
-        Route::get('/', 'IndexController')->name('admin.post.index');
+        Route::get('/', IndexController::class)->name('admin.post.index');
         Route::get('/create', 'CreateController')->name('admin.post.create');
-        Route::post('/', 'StoreController')->name('admin.post.store');
+        Route::post('/', StoreController::class)->name('admin.post.store');
         Route::get('/{post}', 'ShowController')->name('admin.post.show');
         Route::get('/{post}/edit', 'EditController')->name('admin.post.edit');
-        Route::patch('/{category}', 'UpdateController')->name('admin.post.update');
-        Route::delete('/{category}', 'DeleteController')->name('admin.post.delete');
+        Route::patch('/{post}', 'UpdateController')->name('admin.post.update');
+        Route::delete('/{post}', 'DeleteController')->name('admin.post.delete');
     });
 
     Route::group(['namespace' => 'Category', 'prefix' => 'categories'], function () {
@@ -56,3 +56,4 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
 
 
 Auth::routes();
+

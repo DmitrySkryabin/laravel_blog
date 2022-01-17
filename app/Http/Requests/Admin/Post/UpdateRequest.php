@@ -32,4 +32,18 @@ class UpdateRequest extends FormRequest
             'tag_ids.*' => 'nullable|integer|exists:tags,id'
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'title.required' => 'Это поле необходимо заполнить',
+            'title.string' => 'Поле должно содержать строковое значение',
+            'content.required' => 'Это поле необходимо заполнить',
+            'content.string' => 'Поле должно содержать строковое значение',
+            'image.file' => 'Необходимо выбрать файл',
+            'category_id.required' => 'Это поле необходимо заполнить',
+            'category_id.integer' => 'Поле должно содержать целочисленное значение',
+            'category_id.exists' => 'Данные необходимы в базе данных',
+        ];
+    }
 }

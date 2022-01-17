@@ -35,7 +35,7 @@
                                 <input type="text" class="form-control" id="title" placeholder="Заголовок новости"
                                     value="{{ old('title') }}" name="title">
                                 @error('title')
-                                    <div class="text-danger">Это поле необходимо заполнить</div>
+                                    <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
@@ -45,7 +45,7 @@
                                         <input type="file" class="custom-file-input" id="exampleInputFile" name="image">
                                         <label class="custom-file-label" for="exampleInputFile">Выберите изображение</label>
                                         @error('image')
-                                            <div class="text-danger">Выберите изображение</div>
+                                            <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
                                 </div>
@@ -76,7 +76,7 @@
                                 <label for="summernote">Текст</label>
                                 <textarea name="content" id="summernote">{{ old('content') }}</textarea>
                                 @error('content')
-                                    <div class="text-danger">Это поле необходимо заполнить</div>
+                                    <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
