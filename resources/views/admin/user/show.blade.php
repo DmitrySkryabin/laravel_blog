@@ -8,9 +8,9 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6 d-flex align-items-center">
-                        <h1 class="m-0 mr-2">{{ $tag->title }}</h1>
-                        <a href="{{ route('admin.tag.edit', $tag->id) }}" class="text-success"><i class="fas fa-pencil-alt"></i></a>
-                        <form action="{{ route('admin.tag.delete', $tag->id) }}" method="POST">
+                        <h1 class="m-0 mr-2">{{ $user->name }}</h1>
+                        <a href="{{ route('admin.user.edit', $user->id) }}" class="text-success"><i class="fas fa-pencil-alt"></i></a>
+                        <form action="{{ route('admin.user.delete', $user->id) }}" method="POST">
                             @csrf
                             @method('delete')
                             <button type="submit" class="border-0 bg-transparent mt-3 ml-2"><i class="fas fa-trash text-danger"></i></button>
@@ -19,8 +19,8 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ route('admin.main') }}">Главная</a></li>
-                            <li class="breadcrumb-item"><a href="{{ route('admin.tag.index') }}">Тэги</a></li>
-                            <li class="breadcrumb-item active">Показать тэг</li>
+                            <li class="breadcrumb-item"><a href="{{ route('admin.user.index') }}">Пользователи</a></li>
+                            <li class="breadcrumb-item active">Показать пользователя</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -39,11 +39,11 @@
                                     <tbody>
                                         <tr>
                                             <td>ID</td>
-                                            <td>{{ $tag->id }}</td>
+                                            <td>{{ $user->id }}</td>
                                         </tr>
                                         <tr>
                                             <td>Заголовок</td>
-                                            <td>{{ $tag->title }}</td>
+                                            <td>{{ $user->name }}</td>
                                         </tr>
                                     </tbody>
                                 </table>
